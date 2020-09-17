@@ -5,12 +5,15 @@ function App() {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [data, setData] = useState({});
 
-  const chooseCountry = () => {
-    // data fetch
+  const chooseCountry = async (country) => {
+    setSelectedCountry(country);
+    fetchedData = await getData(country);
+    setData(fetchedData);
   };
 
-  useEffect(() => {
-    // data fetch
+  useEffect(async () => {
+    fetchedData = await getData();
+    setData(fetchedData);
   }, []);
 
   return (
