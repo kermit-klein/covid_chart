@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import getData from "./modules/api";
 
 function App() {
   const [selectedCountry, setSelectedCountry] = useState("");
