@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import getData from "./modules/api";
+import classes from "./stylesheets/App.module.scss";
 
 function App() {
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -17,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className={classes.container}>
       <Cards data={data} />
       <SelectCountry country={selectedCountry} chooseCountry={chooseCountry} />
       <Graph data={data} country={selectedCountry} />
