@@ -62,7 +62,11 @@ const Graph = (props) => {
     />
   ) : null;
 
-  return <div></div>;
+  return (
+    <div className={classes.container}>
+      {props.country ? barChart : lineChart}
+    </div>
+  );
 };
 
 export default Graph;
