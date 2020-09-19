@@ -73,6 +73,32 @@ const Cards = (props) => {
             <Typography variant="body2">Number of Recovered</Typography>
           </CardContent>
         </Grid>
+
+        <Grid
+          item
+          component={Card}
+          xs={12}
+          md={3}
+          className={clx(classes.deaths, classes.card)}
+        >
+          <CardContent>
+            <Typography color="textSecondary" gutterBottom>
+              Deaths
+            </Typography>
+            <Typography variant="h5">
+              <CountUp
+                start={0}
+                end={data.recovered}
+                duration={2.5}
+                separator=","
+              />
+            </Typography>
+            <Typography color="textSecondary">
+              {new Date(data.lastDate).toDateString()}
+            </Typography>
+            <Typography variant="body2">Number of Deaths</Typography>
+          </CardContent>
+        </Grid>
       </Grid>
     </div>
   );
