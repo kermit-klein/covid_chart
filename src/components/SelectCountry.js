@@ -23,7 +23,6 @@ const SelectCountry = (props) => {
     setCountry(e.target.value);
     props.chooseCountry(e.target.value === "Global" ? "" : e.target.value);
   };
-
   if (!countryList.length) {
     return <CircularProgress></CircularProgress>;
   }
@@ -41,11 +40,11 @@ const SelectCountry = (props) => {
         onChange={pickCountry}
       >
         <MenuItem value="Global">Global</MenuItem>
-        {/* {countryList.map((name, index) => {
-          <MenuItem key={index} value={name}>
-            {name}
-          </MenuItem>;
-        })} */}
+        {countryList.map((name, index) => (
+          <MenuItem key={index} value={name.name}>
+            {name.name}
+          </MenuItem>
+        ))}
       </Select>
     </FormControl>
   );
