@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import getData from "./modules/api";
+import { getData } from "./modules/api";
 import classes from "./stylesheets/App.module.scss";
 import { Graph, SelectCountry, Cards } from "./components/";
 import covid from "./images/covid1.jpg";
@@ -10,12 +10,12 @@ function App() {
 
   const chooseCountry = async (country) => {
     setSelectedCountry(country);
-    fetchedData = await getData(country);
+    let fetchedData = await getData(country);
     setData(fetchedData);
   };
 
   useEffect(async () => {
-    fetchedData = await getData();
+    let fetchedData = await getData();
     setData(fetchedData);
   }, []);
 

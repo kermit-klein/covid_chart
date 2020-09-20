@@ -7,6 +7,7 @@ const getData = async (country) => {
 
   try {
     let response = await axios.get(url);
+    debugger;
     return response.data;
   } catch (err) {
     console.log(err);
@@ -22,13 +23,13 @@ const getDailyData = async () => {
   }
 };
 
-const allCountries = () => {
-    try {
-        let response = await axios.get("https://covid19.mathdro.id/api/countries")
-        return response.data
-    } catch (error) {
-        console.log(err)
-    }
-}
+const allCountries = async () => {
+  try {
+    let response = await axios.get("https://covid19.mathdro.id/api/countries");
+    return response.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 export { getData, getDailyData, allCountries };
