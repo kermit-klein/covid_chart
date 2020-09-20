@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getDailyData } from "../modules/api";
 import { Line, Bar } from "react-chartjs-2";
-import classes from "./Graph.module.css";
+import classes from "../stylesheets/Graph.module.scss";
 
 const Graph = (props) => {
   const [dailyData, setDailyData] = useState([]);

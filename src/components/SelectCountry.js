@@ -41,11 +41,11 @@ const SelectCountry = (props) => {
         onChange={pickCountry}
       >
         <MenuItem value="Global">Global</MenuItem>
-        {countryList.map((name, index) => {
+        {/* {countryList.map((name, index) => {
           <MenuItem key={index} value={name}>
             {name}
           </MenuItem>;
-        })}
+        })} */}
       </Select>
     </FormControl>
   );

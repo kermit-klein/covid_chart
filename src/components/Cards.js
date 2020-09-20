@@ -36,13 +36,13 @@ const Cards = (props) => {
             <Typography variant="h5">
               <CountUp
                 start={0}
-                end={data.confirmed}
+                end={props.data.confirmed}
                 duration={2.5}
                 separator=","
               />
             </Typography>
             <Typography color="textSecondary">
-              {new Date(data.lastDate).toDateString()}
+              {new Date(props.data.lastDate).toDateString()}
             </Typography>
             <Typography variant="body2">Number of Active Cases</Typography>
           </CardContent>
@@ -62,13 +62,13 @@ const Cards = (props) => {
             <Typography variant="h5">
               <CountUp
                 start={0}
-                end={data.recovered}
+                end={props.data.recovered}
                 duration={2.5}
                 separator=","
               />
             </Typography>
             <Typography color="textSecondary">
-              {new Date(data.lastDate).toDateString()}
+              {new Date(props.data.lastDate).toDateString()}
             </Typography>
             <Typography variant="body2">Number of Recovered</Typography>
           </CardContent>
@@ -88,13 +88,13 @@ const Cards = (props) => {
             <Typography variant="h5">
               <CountUp
                 start={0}
-                end={data.recovered}
+                end={props.data.recovered}
                 duration={2.5}
                 separator=","
               />
             </Typography>
             <Typography color="textSecondary">
-              {new Date(data.lastDate).toDateString()}
+              {new Date(props.data.lastDate).toDateString()}
             </Typography>
             <Typography variant="body2">Number of Deaths</Typography>
           </CardContent>

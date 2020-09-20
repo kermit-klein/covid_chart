@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getData } from "./modules/api";
 import classes from "./stylesheets/App.module.scss";
-import { Graph, SelectCountry, Cards } from "./components/";
+import Graph from "./components/Graph";
+import SelectCountry from "./components/SelectCountry";
+import Cards from "./components/Cards";
 import covid from "./images/covid1.jpg";
 
 function App() {
