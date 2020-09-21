@@ -8,23 +8,24 @@ const Graph = (props) => {
 
   useEffect(() => {
     (async () => {
-      setDailyData(await getDailyData());
+      let response = await getDailyData();
+      setDailyData(response);
     })();
   }, []);
 
   const lineChart = dailyData.length ? (
     <Line
       data={{
-        labels: dailyData.map(({ date }) => date),
+        labels: dailyData.map((element) => element.reportDate),
         datasets: [
           {
-            data: dailyData.map(({ confirmed }) => confirmed),
+            data: dailyData.map((element) => element.confirmed.total),
             label: "Infected",
             borderColor: "#3333ff",
             fill: true,
           },
           {
-            data: dailyData.map(({ deaths }) => deaths),
+            data: dailyData.map((element) => element.deaths.total),
             label: "Deaths",
             borderColor: "red",
             backgroundColor: "rgba(255,0,0,0.5)",
@@ -48,9 +49,9 @@ const Graph = (props) => {
               "rgba(255,0,0,0.5)",
             ],
             data: [
-              props.data.confirmed,
-              props.data.recovered,
-              props.data.deaths,
+              props.data.confirmed.value,
+              props.data.recovered.value,
+              props.data.deaths.value,
             ],
           },
         ],
