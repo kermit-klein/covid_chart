@@ -3,6 +3,7 @@ import { getData } from "./modules/api";
 import classes from "./stylesheets/App.module.scss";
 import Graph from "./components/Graph";
 import SelectCountry from "./components/SelectCountry";
+import TypeCountry from "./components/TypeCountry";
 import Cards from "./components/Cards";
 import covid from "./images/covid1.jpg";
 
@@ -26,6 +27,7 @@ function App() {
       <img className={classes.image} src={covid} alt="Covid" />
       <Cards data={data} />
       <SelectCountry country={selectedCountry} chooseCountry={chooseCountry} />
+      <TypeCountry />
       <Graph data={data} country={selectedCountry} />
     </div>
   );
