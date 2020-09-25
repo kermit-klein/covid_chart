@@ -11,7 +11,7 @@ import classes from "../stylesheets/SelectCountry.module.scss";
 
 const SelectCountry = (props) => {
   const [countryList, setCountryList] = useState([]);
-  const [country, setCountry] = useState("Global");
+  //   const [country, setCountry] = useState("Global");
 
   useEffect(() => {
     (async () => {
@@ -20,7 +20,7 @@ const SelectCountry = (props) => {
   }, []);
 
   const pickCountry = (e) => {
-    setCountry(e.target.value);
+    // setCountry(e.target.value);
     props.chooseCountry(e.target.value === "Global" ? "" : e.target.value);
   };
   if (!countryList.length) {
@@ -36,7 +36,7 @@ const SelectCountry = (props) => {
         labelId="country-picker"
         id="country-pick"
         label="Select Country"
-        value={country}
+        value={props.country}
         onChange={pickCountry}
       >
         <MenuItem value="Global">Global</MenuItem>

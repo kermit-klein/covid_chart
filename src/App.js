@@ -8,7 +8,7 @@ import Cards from "./components/Cards";
 import covid from "./images/covid1.jpg";
 
 function App() {
-  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("Global");
   const [data, setData] = useState({});
 
   const chooseCountry = async (country) => {
@@ -27,7 +27,7 @@ function App() {
       <img className={classes.image} src={covid} alt="Covid" />
       <Cards data={data} />
       <SelectCountry country={selectedCountry} chooseCountry={chooseCountry} />
-      <TypeCountry country={selectedCountry} />
+      <TypeCountry country={selectedCountry} chooseCountry={chooseCountry} />
       <Graph data={data} country={selectedCountry} />
     </div>
   );

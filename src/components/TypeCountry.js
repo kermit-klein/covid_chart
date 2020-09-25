@@ -10,22 +10,15 @@ const TypeCountry = (props) => {
   const loading = open && options.length === 0;
 
   useEffect(() => {
-    let active = true;
-
     if (!loading) {
       return undefined;
     }
 
     (async () => {
       const response = await allCountries();
-      if (active) {
-        setOptions(response.map((element) => element.name));
-      }
-    })();
 
-    return () => {
-      active = false;
-    };
+      setOptions(response.map((element) => element.name));
+    })();
   }, [loading]);
 
   useEffect(() => {
@@ -45,10 +38,9 @@ const TypeCountry = (props) => {
       onClose={() => {
         setOpen(false);
       }}
-      getOptionSelected={(option, value) => option === value}
-      getOptionLabel={(option) => option}
       options={options}
       loading={loading}
+      onChange={(event, inputValue) => props.chooseCountry(inputValue)}
       renderInput={(params) => (
         <TextField
           {...params}
