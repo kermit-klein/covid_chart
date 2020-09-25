@@ -27,7 +27,7 @@ function App() {
       <img className={classes.image} src={covid} alt="Covid" />
       <Cards data={data} />
       <SelectCountry country={selectedCountry} chooseCountry={chooseCountry} />
-      <TypeCountry />
+      <TypeCountry country={selectedCountry} />
       <Graph data={data} country={selectedCountry} />
     </div>
   );
